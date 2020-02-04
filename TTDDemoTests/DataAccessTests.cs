@@ -14,7 +14,7 @@ namespace TTDDemoTests
     public class DataAccessTests
     {
         [Fact]
-        public void GetAllEmployees_Valid()
+        public void GetAllEmployees_Valid() 
         {
             using (var mock = AutoMock.GetLoose())
             {

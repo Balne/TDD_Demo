@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TDDDemoConsole
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
 
