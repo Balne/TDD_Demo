@@ -112,7 +112,6 @@
   <ItemGroup>
     <Compile Include="CalculatorTests.cs" />
     <Compile Include="DataAccessTests.cs" />
-    <Compile Include="factAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

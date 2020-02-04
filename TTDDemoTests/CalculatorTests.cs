@@ -7,7 +7,7 @@ using Xunit;
 namespace TTDDemoTests
 {
     public class CalculatorTests
-    {
+    { 
 
 
         /* STEP 1
