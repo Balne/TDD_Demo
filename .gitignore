@@ -6,3 +6,7 @@
 /.vs/TDDDemo/v16/Server/sqlite3
 /.vs/TDDDemo/v16/TestStore/0
 /.vs/TDDDemo/v16/.suo
+/packages
+/TDDProject/obj/Debug
+/TTDDemoTests
+*.sqlite
