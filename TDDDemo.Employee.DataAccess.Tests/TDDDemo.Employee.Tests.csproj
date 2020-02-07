@@ -8,11 +8,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CEDF104B-B8F0-41CA-9EC4-7C20111B81C2}</ProjectGuid>
+    <ProjectGuid>{76E1A993-295E-4D76-8531-E1D110D8E87A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TTDDemoTests</RootNamespace>
-    <AssemblyName>TTDDemoTests</AssemblyName>
+    <RootNamespace>TDDDemo.Employee.DataAccess.Tests</RootNamespace>
+    <AssemblyName>TDDDemo.Employee.DataAccess.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -110,8 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatorTests.cs" />
-    <Compile Include="DataAccessTests.cs" />
+    <Compile Include="Business\ManageEmployeeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,13 +118,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TDDProject\TDDDemoConsole.csproj">
-      <Project>{b76d6d19-2784-469f-9a8d-f79c4b9a703e}</Project>
-      <Name>TDDDemoConsole</Name>
-    </ProjectReference>
+    <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+    <ProjectReference Include="..\TDDDemo.Employee.DataAccess\TDDDemo.Employee.DataAccess.csproj">
+      <Project>{a3ba7222-51c2-4257-803d-498695c7b667}</Project>
+      <Name>TDDDemo.Employee.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TDDDemo.Employee.Modals\TDDDemo.Employee.Modals.csproj">
+      <Project>{528ef234-c011-4b22-885d-f7052a07616c}</Project>
+      <Name>TDDDemo.Employee.Modals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TDDDemo.EmployeeDataAcess\TDDDemo.Employee.Repository.csproj">
+      <Project>{9ec2817d-dd74-4712-9cd4-9125c43fa365}</Project>
+      <Name>TDDDemo.Employee.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TTDDemo.EmployeeBusiness\TDDDemo.Employee.Business.csproj">
+      <Project>{82424c27-8313-4858-a54f-63bf24bff560}</Project>
+      <Name>TDDDemo.Employee.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
