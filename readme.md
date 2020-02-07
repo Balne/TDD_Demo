@@ -10,13 +10,9 @@ This solution demonstares the idea of Test Driven Development and covers basic w
    3. Add_Step3 method covers more scenarios and it's a refactor of Add_Step2
 
 
-
 Calculator class doesn't cover the part where we try to get/update data from some database.
-That is taken care by DataAccess.cs where it's corresponding tests are written in DAtAccessTests.cs
+That is taken care in TDDDemo.Employee.Business.MangeEmployee.cs where it's corresponding tests are written in TDDDemo.Employee.DataAccess.Tests.Business.MangeEmployeeTests.cs
 
--- There is a repository pattern setup in DataAccess.cs file that holds modal class Employee, IEmployeeContext implements DbContext of EntityFramework.
-   However this is not complete and will not actually fetch/update data in any repository.
-   This is written to demonstrate the implementation on UNit test for such cases.
 
-   -- DataAccess class holds methods to GetAllEmployees and SaveEmployee.
-   -- DataAccessTests.cs tries to mock data and will cover some of the tests for the above methods.
+-- TDDDemo.EmployeeManagement webapi communicates with Database via Business --> Repository --> DataAccess
+-- Demonstarted the implementation of Dependency Injection, Repository and UnitofWork and Tests(for now only for Business layer)
