@@ -5,8 +5,8 @@
     using TDDDemo.Employee.Modals;
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        private EmployeeContext employeeContext = null;
-        public EmployeeRepository(EmployeeContext employeeContext) : base(employeeContext)
+        private EmployeeEntities employeeContext = null;
+        public EmployeeRepository(EmployeeEntities employeeContext) : base(employeeContext)
         {
             this.employeeContext = employeeContext;
         }

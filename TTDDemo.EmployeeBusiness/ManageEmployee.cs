@@ -10,9 +10,11 @@ namespace TDDDemo.Employee.Business
     public class ManageEmployee : IManageEmployee
     {
         private readonly IEmployeeRepository employeeRepository = null;
-        public ManageEmployee(IEmployeeRepository employeeRepository)
+        private readonly IUnitofWork unitofWork = null;
+        public ManageEmployee(IEmployeeRepository employeeRepository, IUnitofWork unitofWork)
         {
             this.employeeRepository = employeeRepository;
+            this.unitofWork = unitofWork;
         }
         public IEnumerable<Employee> GetAllEmployees()
         {
@@ -54,6 +56,7 @@ namespace TDDDemo.Employee.Business
             }
 
             this.employeeRepository.Add(employee);
+            this.unitofWork.SaveChanges();
         }
 
         private bool IsValidEmployeeName(string empName)

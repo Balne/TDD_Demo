@@ -5,17 +5,24 @@
 
     public class UnitofWork : IUnitofWork
     {
-        public readonly EmployeeContext context = null;
-        public UnitofWork(EmployeeContext context)
-        {
-            this.context = (EmployeeContext)context;
-            EmployeeRepository = new EmployeeRepository(context);
-        }
-        public IEmployeeRepository EmployeeRepository { get; private set; }
+        private EmployeeEntities context;
+        private readonly IDbFactory dbFactory;
 
-        public void Dispose()
+        public UnitofWork(IDbFactory dbFactory)
         {
-            this.context.Dispose();
+            this.dbFactory = dbFactory;
+        }
+
+        public EmployeeEntities Context
+        {
+            get
+            {
+                if(this.context == null)
+                {
+                    this.context = this.dbFactory.Init();
+                }
+                return this.context;
+            }
         }
 
         public void SaveChanges()

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TDDDemo.Employee.Repository
+namespace TDDDemo.Employee.DataAccess
 {
-    public interface IUnitofWork
+    public interface IDbFactory : IDisposable
     {
-        void SaveChanges();
+        EmployeeEntities Init();
     }
 }

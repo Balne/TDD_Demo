@@ -1,36 +1,37 @@
 ﻿namespace TDDDemo.EmployeeManagement.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Web.Http;
-    using TDDDemo.Employee.Repository;
+    using TDDDemo.Employee.Business;
     using TDDDemo.Employee.Modals;
 
     public class EmployeeController : ApiController
     {
-        private readonly IUnitofWork unitofWork = null;
-        public EmployeeController(IUnitofWork unitofWork)
+        private readonly IManageEmployee manageEmployee = null;
+        public EmployeeController(IManageEmployee manageEmployee)
         {
-            this.unitofWork = unitofWork;
+            this.manageEmployee = manageEmployee;
         }
 
         // GET api/employee
         public IEnumerable<Employee> Get()
         {
-            return this.unitofWork.EmployeeRepository.GetAll();
+            return this.manageEmployee.GetAllEmployees();
         }
 
         // GET api/employee/5
         public Employee Get(int id)
         {
-            return this.unitofWork.EmployeeRepository.Get(id);
+            throw new NotImplementedException();
+            //return this.manageEmployee.Get(id);
         }
 
         // POST api/employee
         public void Post([FromBody]Employee employee)
         {
             // Yet to implement
-            unitofWork.EmployeeRepository.Add(employee);
-            unitofWork.SaveChanges();
+            manageEmployee.SaveEmployee(employee);
         }
 
         // PUT api/employee/5

@@ -52,9 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeContext.cs" />
+    <Compile Include="EmployeeDbFactory.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="EmployeeEntities.cs" />
+    <Compile Include="Interfaces\IDbFactory.cs" />
     <Compile Include="Interfaces\IEmployeeContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedData\EmployeDBSeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDDDemo.Employee.Modals\TDDDemo.Employee.Modals.csproj">

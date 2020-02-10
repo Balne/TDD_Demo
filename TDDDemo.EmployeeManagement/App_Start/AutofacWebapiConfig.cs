@@ -32,8 +32,8 @@ namespace TDDDemo.EmployeeManagement
             //Register your Web API controllers.  
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterType<EmployeeContext>()
-               .As<EmployeeContext>()
+            builder.RegisterType<EmployeeDbFactory>()
+               .As<IDbFactory>()
                .InstancePerRequest();
 
             builder.RegisterType<UnitofWork>()

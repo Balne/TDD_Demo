@@ -16,7 +16,12 @@
         {
             var empRepositoryMock = new Mock<IEmployeeRepository>();
             empRepositoryMock.Setup(x => x.GetAll()).Returns(GetSampleEmployees());
-            var mngEmp = new ManageEmployee(empRepositoryMock.Object);
+
+            var unitofWorkMock = new Mock<IUnitofWork>();
+            unitofWorkMock.Setup(x => x.SaveChanges());
+
+            var mngEmp = new ManageEmployee(empRepositoryMock.Object, unitofWorkMock.Object);
+            
             var expected = GetSampleEmployees();
             var actual = mngEmp.GetAllEmployees().ToList();
 
@@ -38,7 +43,11 @@
             var empRepositoryMock = new Mock<IEmployeeRepository>();
             empRepositoryMock.Setup(x => x.Add(emp));
 
-            var mngEmp = new ManageEmployee(empRepositoryMock.Object);
+            var unitofWorkMock = new Mock<IUnitofWork>();
+            unitofWorkMock.Setup(x => x.SaveChanges());
+
+            var mngEmp = new ManageEmployee(empRepositoryMock.Object, unitofWorkMock.Object);
+
 
             Action action = () => mngEmp.SaveEmployee(emp);
 
@@ -57,7 +66,11 @@
             var empRepositoryMock = new Mock<IEmployeeRepository>();
             empRepositoryMock.Setup(x => x.Add(emp));
 
-            var mngEmp = new ManageEmployee(empRepositoryMock.Object);
+            var unitofWorkMock = new Mock<IUnitofWork>();
+            unitofWorkMock.Setup(x => x.SaveChanges());
+
+            var mngEmp = new ManageEmployee(empRepositoryMock.Object, unitofWorkMock.Object);
+
 
             Action action = () => mngEmp.SaveEmployee(emp);
 
@@ -75,7 +88,11 @@
             var empRepositoryMock = new Mock<IEmployeeRepository>();
             empRepositoryMock.Setup(x => x.Add(emp));
 
-            var mngEmp = new ManageEmployee(empRepositoryMock.Object);
+            var unitofWorkMock = new Mock<IUnitofWork>();
+            unitofWorkMock.Setup(x => x.SaveChanges());
+
+            var mngEmp = new ManageEmployee(empRepositoryMock.Object, unitofWorkMock.Object);
+
 
             Action action = () => mngEmp.SaveEmployee(emp);
 
@@ -93,7 +110,11 @@
             var empRepositoryMock = new Mock<IEmployeeRepository>();
             empRepositoryMock.Setup(x => x.Add(emp));
 
-            var mngEmp = new ManageEmployee(empRepositoryMock.Object);
+            var unitofWorkMock = new Mock<IUnitofWork>();
+            unitofWorkMock.Setup(x => x.SaveChanges());
+
+            var mngEmp = new ManageEmployee(empRepositoryMock.Object, unitofWorkMock.Object);
+
 
             mngEmp.SaveEmployee(emp);
 
