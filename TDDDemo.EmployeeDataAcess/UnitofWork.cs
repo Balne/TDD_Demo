@@ -8,14 +8,14 @@
         public readonly EmployeeContext context = null;
         public UnitofWork(EmployeeContext context)
         {
-            this.context = context;
+            this.context = (EmployeeContext)context;
             EmployeeRepository = new EmployeeRepository(context);
         }
         public IEmployeeRepository EmployeeRepository { get; private set; }
 
         public void Dispose()
         {
-            context.Dispose();
+            this.context.Dispose();
         }
 
         public void SaveChanges()
